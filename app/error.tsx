@@ -13,7 +13,7 @@ export default function Error({
       <p className="mb-8 text-gray-400">{error.message || "An unexpected error occurred."}</p>
       <button
         onClick={() => reset()}
-        className="rounded-full bg-blue-600 px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-blue-500"
+        className="rounded-lg bg-rose px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-rose-dark"
       >
         Try again
       </button>

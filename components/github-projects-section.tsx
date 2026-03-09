@@ -35,10 +35,10 @@ export function GithubProjectsSection() {
     <section id="open-source" className="scroll-mt-20 border-t border-white/5 bg-gradient-to-b from-black to-neutral-950 px-6 py-24 md:px-12 lg:px-24">
       <div className="mx-auto max-w-7xl">
       <div className="mb-16">
-        <span className="mb-4 block font-mono text-xs uppercase tracking-[0.2em] text-blue-400">
+        <span className="mb-4 block font-mono text-xs uppercase tracking-wider text-rose">
           Open Source
         </span>
-        <h2 className="font-heading text-3xl font-bold text-white md:text-4xl">GitHub Projects</h2>
+        <h2 className="font-sans text-3xl font-bold text-white md:text-4xl">GitHub Projects</h2>
         <p className="mt-4 max-w-2xl text-gray-400">
           Building AI tools and infrastructure in the open. From document processing pipelines to enterprise HR
           systems.
@@ -52,7 +52,7 @@ export function GithubProjectsSection() {
             className="group relative overflow-hidden rounded-lg border border-white/10 bg-gradient-to-br from-white/[0.03] to-white/[0.01] p-8 transition-all hover:border-white/20 hover:from-white/[0.05] hover:to-white/[0.02]"
           >
             {/* Accent line */}
-            <div className="absolute top-0 left-0 h-1 w-0 bg-blue-500 transition-all duration-500 group-hover:w-full" />
+            <div className="absolute top-0 left-0 h-1 w-0 bg-rose transition-all duration-500 group-hover:w-full" />
 
             <div className="mb-6 flex items-start justify-between">
               <div className="flex items-center gap-3">
@@ -77,7 +77,7 @@ export function GithubProjectsSection() {
             <div className="mb-6 space-y-2">
               {project.highlights.map((highlight, i) => (
                 <div key={i} className="flex items-start gap-2 text-sm text-gray-500">
-                  <span className="mt-1.5 block h-1 w-1 flex-shrink-0 rounded-full bg-blue-500" />
+                  <span className="mt-1.5 block h-1 w-1 flex-shrink-0 rounded-full bg-rose" />
                   <span>{highlight}</span>
                 </div>
               ))}

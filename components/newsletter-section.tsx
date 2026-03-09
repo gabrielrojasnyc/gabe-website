@@ -18,10 +18,10 @@ export function NewsletterSection() {
 
       <div className="relative z-10 mx-auto max-w-7xl grid gap-12 lg:grid-cols-2 lg:items-center">
         <div>
-          <span className="mb-4 block font-mono text-xs uppercase tracking-[0.2em] text-blue-400">
+          <span className="mb-4 block font-mono text-xs uppercase tracking-wider text-rose">
             Newsletter
           </span>
-          <h2 className="mb-6 font-heading text-4xl font-bold text-white md:text-5xl">Gabriel Rojas AI</h2>
+          <h2 className="mb-6 font-sans text-4xl font-bold text-white md:text-5xl">Gabriel Rojas AI</h2>
           <p className="mb-4 max-w-xl text-lg text-gray-300">{"The industry is moving fast -- but in the wrong direction."}</p>
           <p className="mb-8 max-w-xl text-base text-gray-400 leading-relaxed">
             My newsletter cuts through the noise of corporate jargon and AI theater. I dive deep into what actually
@@ -31,7 +31,7 @@ export function NewsletterSection() {
           <div className="mb-8 space-y-3">
             {topics.map((topic) => (
               <div key={topic.label} className="flex items-center gap-3 text-sm text-gray-400">
-                <topic.icon className="h-4 w-4 shrink-0 text-blue-500" />
+                <topic.icon className="h-4 w-4 shrink-0 text-rose" />
                 <span className="text-white font-medium">{topic.label}</span>
                 <span className="hidden sm:inline">{"--"}</span>
                 <span className="hidden sm:inline">{topic.detail}</span>
@@ -41,7 +41,7 @@ export function NewsletterSection() {
           <Link
             href="https://gabrielrojasai.substack.com"
             target="_blank"
-            className="inline-flex items-center text-lg font-bold text-white decoration-blue-500 underline-offset-4 hover:underline"
+            className="inline-flex items-center text-lg font-bold text-white decoration-rose underline-offset-4 hover:underline"
           >
             Subscribe on Substack
             <ArrowUpRight className="ml-2 h-5 w-5" />

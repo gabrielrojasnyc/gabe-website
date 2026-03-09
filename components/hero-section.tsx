@@ -21,39 +21,44 @@ export function HeroSection() {
       </div>
 
       <div className="relative z-10 mx-auto w-full max-w-7xl">
+        {/* Pixel marker - decorative section identifier per typography system */}
+        <div className="mb-6 animate-fade-in-up">
+          <span className="pixel-marker">01 / Home</span>
+        </div>
+
         {/* Micro-label */}
         <div className="mb-12 animate-fade-in-up">
-          <span className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-[0.2em] text-blue-400">
+          <span className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-rose">
             <span className="flex h-1.5 w-1.5 relative">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-blue-500"></span>
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-rose opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-rose"></span>
             </span>
             Architecting Intelligence
           </span>
         </div>
 
-        {/* Headline -- extreme size contrast is the Gabe signature */}
-        <h1 className="font-heading text-6xl font-bold tracking-tighter text-white md:text-8xl lg:text-9xl leading-[0.9] animate-fade-in-up animation-delay-200">
+        {/* Headline -- Geist Bold at display scale with negative tracking */}
+        <h1 className="font-sans text-6xl font-bold tracking-tighter text-white md:text-8xl lg:text-9xl leading-[0.9] animate-fade-in-up animation-delay-200">
           Structure
           <br />
           from{" "}
-          <span className="text-blue-400">Chaos.</span>
+          <span className="text-rose">Chaos.</span>
         </h1>
 
-        {/* Subtext -- generous whitespace above, muted weight */}
-        <p className="mt-10 max-w-xl text-base leading-relaxed text-gray-400 md:text-lg animate-fade-in-up animation-delay-400">
+        {/* Subtext -- Geist Regular at body scale */}
+        <p className="mt-10 max-w-2xl text-base leading-relaxed text-gray-400 md:text-lg animate-fade-in-up animation-delay-400">
           {"AI isn't magic -- it's engineering. I bridge the gap between research papers and revenue, building systems that "}
-          <span className="text-white">scale</span>,{" "}
-          <span className="text-white">adapt</span>, and{" "}
-          <span className="text-white">endure</span>.
+          <span className="text-white font-medium">scale</span>,{" "}
+          <span className="text-white font-medium">adapt</span>, and{" "}
+          <span className="text-white font-medium">endure</span>.
         </p>
 
-        {/* CTAs -- clear primary/secondary split */}
+        {/* CTAs -- primary (rose fill) and secondary (text-only link) */}
         <div className="mt-14 flex flex-col gap-4 sm:flex-row sm:items-center animate-fade-in-up animation-delay-600">
           <Link
             href="https://gabrielrojasai.substack.com"
             target="_blank"
-            className="group inline-flex h-12 items-center justify-center rounded-lg bg-blue-600 px-8 text-sm font-semibold text-white transition-all hover:bg-blue-500"
+            className="group inline-flex h-12 items-center justify-center rounded-lg bg-rose px-8 text-sm font-semibold text-white transition-all hover:bg-rose-dark"
           >
             Read My Mind
             <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />

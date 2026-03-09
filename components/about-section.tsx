@@ -23,13 +23,13 @@ export function AboutSection() {
         </div>
 
         <div className="order-1 lg:order-2">
-          <span className="mb-4 block font-mono text-xs uppercase tracking-[0.2em] text-blue-400">
+          <span className="mb-4 block font-mono text-xs uppercase tracking-wider text-rose">
             About
           </span>
-          <h2 className="font-heading text-4xl font-bold tracking-tight text-white md:text-5xl mb-4">
-            The <span className="text-blue-400">Operator</span> in the Room.
+          <h2 className="font-sans text-4xl font-bold tracking-tight text-white md:text-5xl mb-4">
+            The <span className="text-rose">Operator</span> in the Room.
           </h2>
-          <div className="h-px w-16 bg-blue-500 mb-10" />
+          <div className="h-px w-16 bg-rose mb-10" />
 
           <div className="space-y-6 text-base leading-relaxed text-gray-400">
             <p>

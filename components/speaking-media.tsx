@@ -35,10 +35,10 @@ export function SpeakingMedia() {
   return (
     <section id="speaking" className="scroll-mt-20 border-y border-white/5 bg-neutral-900/50 px-6 py-24 md:px-12 lg:px-24">
       <div className="mx-auto max-w-6xl">
-        <span className="mb-4 block font-mono text-xs uppercase tracking-[0.2em] text-blue-400">
+        <span className="mb-4 block font-mono text-xs uppercase tracking-wider text-rose">
           Speaking
         </span>
-        <h2 className="mb-4 font-heading text-3xl font-bold text-white md:text-4xl">Speaking & Media</h2>
+        <h2 className="mb-4 font-sans text-3xl font-bold text-white md:text-4xl">Speaking & Media</h2>
         <p className="mb-16 text-gray-400 max-w-2xl">
           Talks, podcasts, and interviews where I share insights on AI product strategy and technical leadership.
         </p>
@@ -51,10 +51,10 @@ export function SpeakingMedia() {
             >
               <div>
                 <div className="mb-4 flex items-center justify-between">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-blue-600/10 text-blue-400">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-rose/10 text-rose">
                     <item.icon className="h-6 w-6" />
                   </div>
-                  <span className="text-xs font-bold uppercase tracking-wider text-blue-500">{item.type}</span>
+                  <span className="text-xs font-bold uppercase tracking-wider text-rose">{item.type}</span>
                 </div>
                 <h3 className="mb-2 text-xl font-bold text-white">{item.title}</h3>
                 <div className="mb-3 text-sm text-gray-500">
@@ -70,7 +70,7 @@ export function SpeakingMedia() {
               ) : (
                 <a
                   href="#"
-                  className="mt-6 inline-flex items-center text-sm font-medium text-blue-400 hover:text-blue-300 transition-colors"
+                  className="mt-6 inline-flex items-center text-sm font-medium text-rose hover:text-rose/80 transition-colors"
                 >
                   Watch Now
                   <ExternalLink className="ml-2 h-4 w-4" />
@@ -80,7 +80,7 @@ export function SpeakingMedia() {
           ))}
         </div>
 
-        <div className="mt-12 rounded-lg border border-blue-500/20 bg-blue-500/5 p-8 text-center">
+        <div className="mt-12 rounded-lg border border-rose/20 bg-rose/5 p-8 text-center">
           <h3 className="mb-2 text-xl font-bold text-white">Interested in having me speak?</h3>
           <p className="mb-6 text-gray-400">
             {"I'm available for podcasts, conferences, and workshops on AI product strategy and technical leadership."}
