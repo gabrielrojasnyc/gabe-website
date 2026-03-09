@@ -18,10 +18,9 @@ export function NewsletterSection() {
 
       <div className="relative z-10 mx-auto max-w-7xl grid gap-12 lg:grid-cols-2 lg:items-center">
         <div>
-          <span className="mb-4 block font-mono text-xs uppercase tracking-wider text-rose">
-            Newsletter
-          </span>
-          <h2 className="mb-6 font-sans text-4xl font-bold text-white md:text-5xl">Gabriel Rojas AI</h2>
+          <span className="pixel-marker mb-6">/ NEWSLETTER</span>
+          <span className="micro-label mb-4">Newsletter</span>
+          <h2 className="mb-6 font-pixel text-3xl font-bold tracking-wide text-white md:text-4xl uppercase">Gabriel Rojas AI</h2>
           <p className="mb-4 max-w-xl text-lg text-gray-300">{"The industry is moving fast -- but in the wrong direction."}</p>
           <p className="mb-8 max-w-xl text-base text-gray-400 leading-relaxed">
             My newsletter cuts through the noise of corporate jargon and AI theater. I dive deep into what actually

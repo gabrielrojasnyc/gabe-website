@@ -33,10 +33,8 @@ export function PortfolioSection() {
       <div className="mx-auto max-w-7xl">
       <div className="mb-16">
         <span className="pixel-marker mb-6">04 / WORK</span>
-        <span className="mb-4 block font-mono text-xs uppercase tracking-wider text-rose">
-          Portfolio
-        </span>
-        <h2 className="font-sans text-3xl font-bold text-white md:text-4xl">Selected Work</h2>
+        <span className="micro-label mb-4">Portfolio</span>
+        <h2 className="font-pixel text-2xl font-bold tracking-wide text-white md:text-3xl uppercase">Selected Work</h2>
         <p className="mt-4 max-w-xl text-gray-400">
           A snapshot of projects where technical depth meets business strategy.
         </p>

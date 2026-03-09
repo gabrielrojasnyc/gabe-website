@@ -37,10 +37,8 @@ export function FeaturedWriting() {
         <div className="mb-16 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
           <div>
             <span className="pixel-marker mb-6">03 / INSIGHTS</span>
-            <span className="mb-4 block font-mono text-xs uppercase tracking-wider text-rose">
-              Writing
-            </span>
-            <h2 className="mb-4 font-sans text-3xl font-bold text-white md:text-4xl">Featured Writing</h2>
+            <span className="micro-label mb-4">Writing</span>
+            <h2 className="mb-4 font-pixel text-2xl font-bold tracking-wide text-white md:text-3xl uppercase">Featured Writing</h2>
             <p className="text-gray-400 max-w-2xl">
               No fluff, no hype cycles. Just deep technical analysis and forward-thinking product strategy.
             </p>
