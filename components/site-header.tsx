@@ -31,7 +31,7 @@ export function SiteHeader() {
       }`}
     >
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6 md:px-12">
-        <Link href="/" className="font-sans text-lg font-bold tracking-tight text-white">
+        <Link href="/" className="font-pixel text-base tracking-wider text-white uppercase">
           GR<span className="text-rose">.</span>
         </Link>
 

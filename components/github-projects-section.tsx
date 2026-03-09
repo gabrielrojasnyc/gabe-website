@@ -35,10 +35,9 @@ export function GithubProjectsSection() {
     <section id="open-source" className="scroll-mt-20 border-t border-white/5 bg-gradient-to-b from-black to-neutral-950 px-6 py-24 md:px-12 lg:px-24">
       <div className="mx-auto max-w-7xl">
       <div className="mb-16">
-        <span className="mb-4 block font-mono text-xs uppercase tracking-wider text-rose">
-          Open Source
-        </span>
-        <h2 className="font-sans text-3xl font-bold text-white md:text-4xl">GitHub Projects</h2>
+        <span className="pixel-marker mb-6">06 / CODE</span>
+        <span className="micro-label mb-4">Open Source</span>
+        <h2 className="font-pixel text-2xl font-bold tracking-wide text-white md:text-3xl uppercase">GitHub Projects</h2>
         <p className="mt-4 max-w-2xl text-gray-400">
           Building AI tools and infrastructure in the open. From document processing pipelines to enterprise HR
           systems.

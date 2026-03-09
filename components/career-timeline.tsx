@@ -34,10 +34,9 @@ export function CareerTimeline() {
   return (
     <section className="border-y border-white/5 bg-neutral-900/30 px-6 py-24 md:px-12 lg:px-24">
       <div className="mx-auto max-w-4xl">
-        <span className="mb-4 block font-mono text-xs uppercase tracking-wider text-rose">
-          Career
-        </span>
-        <h2 className="mb-4 font-sans text-3xl font-bold text-white md:text-4xl">Career Journey</h2>
+        <span className="pixel-marker mb-6">02 / JOURNEY</span>
+        <span className="micro-label mb-4">Career</span>
+        <h2 className="mb-4 font-pixel text-2xl font-bold tracking-wide text-white md:text-3xl uppercase">Career Journey</h2>
         <p className="mb-16 text-gray-400 max-w-2xl">
           From engineering complex systems to leading AI product strategy, here is how I got here.
         </p>

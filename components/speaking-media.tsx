@@ -35,10 +35,9 @@ export function SpeakingMedia() {
   return (
     <section id="speaking" className="scroll-mt-20 border-y border-white/5 bg-neutral-900/50 px-6 py-24 md:px-12 lg:px-24">
       <div className="mx-auto max-w-6xl">
-        <span className="mb-4 block font-mono text-xs uppercase tracking-wider text-rose">
-          Speaking
-        </span>
-        <h2 className="mb-4 font-sans text-3xl font-bold text-white md:text-4xl">Speaking & Media</h2>
+        <span className="pixel-marker mb-6">/ SPEAKING</span>
+        <span className="micro-label mb-4">Speaking</span>
+        <h2 className="mb-4 font-pixel text-2xl font-bold tracking-wide text-white md:text-3xl uppercase">Speaking & Media</h2>
         <p className="mb-16 text-gray-400 max-w-2xl">
           Talks, podcasts, and interviews where I share insights on AI product strategy and technical leadership.
         </p>

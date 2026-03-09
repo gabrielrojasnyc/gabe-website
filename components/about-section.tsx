@@ -23,10 +23,9 @@ export function AboutSection() {
         </div>
 
         <div className="order-1 lg:order-2">
-          <span className="mb-4 block font-mono text-xs uppercase tracking-wider text-rose">
-            About
-          </span>
-          <h2 className="font-sans text-4xl font-bold tracking-tight text-white md:text-5xl mb-4">
+          <span className="pixel-marker mb-6">/ ABOUT</span>
+          <span className="micro-label mb-4">About</span>
+          <h2 className="font-pixel text-3xl font-bold tracking-wide text-white md:text-4xl mb-4 uppercase">
             The <span className="text-rose">Operator</span> in the Room.
           </h2>
           <div className="h-px w-16 bg-rose mb-10" />

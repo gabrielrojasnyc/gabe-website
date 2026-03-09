@@ -26,7 +26,7 @@ export function Footer() {
             <div className="mb-6">
               <span className="micro-label">The AI Executive</span>
             </div>
-            <Link href="/" className="inline-block font-sans text-3xl md:text-4xl font-bold tracking-tight text-white">
+            <Link href="/" className="inline-block font-pixel text-2xl md:text-3xl font-bold tracking-wider text-white uppercase">
               Gabriel Rojas<span className="text-rose">.</span>
             </Link>
             <p className="mt-6 max-w-sm text-base leading-relaxed text-gray-400">
@@ -116,16 +116,12 @@ export function Footer() {
         {/* Divider */}
         <div className="border-t border-white/5" />
 
-        {/* Bottom statement */}
+        {/* Bottom statement with pixel marker */}
         <div className="mt-12 flex flex-col items-start justify-between gap-6 md:flex-row md:items-center">
-          <div>
-            <p className="text-xs font-mono uppercase tracking-wider text-gray-600">
-              &copy; {new Date().getFullYear()} Gabriel Rojas. All rights reserved.
-            </p>
-          </div>
-          <p className="text-sm leading-relaxed text-gray-500 max-w-md">
-            <span className="font-semibold text-white">Built with conviction.</span> Using Geist typography, engineered for precision and clarity.
+          <p className="pixel-marker">
+            &copy; {new Date().getFullYear()} GABRIEL ROJAS
           </p>
+          <span className="pixel-marker-accent">BUILT BY HAND</span>
         </div>
       </div>
     </footer>

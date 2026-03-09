@@ -21,14 +21,14 @@ export function HeroSection() {
       </div>
 
       <div className="relative z-10 mx-auto w-full max-w-7xl">
-        {/* Pixel marker - decorative section identifier per typography system */}
-        <div className="mb-6 animate-fade-in-up">
-          <span className="pixel-marker">01 / Home</span>
+        {/* Pixel marker - slide number per typography system: 9-12px, ALL CAPS, fg4 color */}
+        <div className="mb-8 animate-fade-in-up">
+          <span className="pixel-marker">01 / 06</span>
         </div>
 
         {/* Micro-label */}
         <div className="mb-12 animate-fade-in-up">
-          <span className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-rose">
+          <span className="micro-label inline-flex items-center gap-2">
             <span className="flex h-1.5 w-1.5 relative">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-rose opacity-75"></span>
               <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-rose"></span>
@@ -37,8 +37,8 @@ export function HeroSection() {
           </span>
         </div>
 
-        {/* Headline -- Geist Bold at display scale with negative tracking */}
-        <h1 className="font-sans text-6xl font-bold tracking-tighter text-white md:text-8xl lg:text-9xl leading-[0.9] animate-fade-in-up animation-delay-200">
+        {/* Headline -- Geist Pixel Square at display scale */}
+        <h1 className="font-pixel text-5xl font-bold tracking-wide text-white md:text-7xl lg:text-8xl leading-[1.1] animate-fade-in-up animation-delay-200 uppercase">
           Structure
           <br />
           from{" "}
