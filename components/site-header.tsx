@@ -31,8 +31,8 @@ export function SiteHeader() {
       }`}
     >
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6 md:px-12">
-        <Link href="/" className="font-heading text-lg font-bold tracking-tight text-white">
-          GR<span className="text-blue-500">.</span>
+        <Link href="/" className="font-sans text-lg font-bold tracking-tight text-white">
+          GR<span className="text-rose">.</span>
         </Link>
 
         {/* Desktop nav */}
@@ -50,7 +50,7 @@ export function SiteHeader() {
             href="https://gabrielrojasai.substack.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex h-9 items-center rounded-lg bg-blue-600 px-4 text-sm font-medium text-white transition-colors hover:bg-blue-500"
+            className="inline-flex h-9 items-center rounded-lg bg-rose px-4 text-sm font-medium text-white transition-colors hover:bg-rose-dark"
           >
             Subscribe
           </a>
@@ -84,7 +84,7 @@ export function SiteHeader() {
               href="https://gabrielrojasai.substack.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-2 inline-flex h-10 items-center justify-center rounded-lg bg-blue-600 px-4 text-sm font-medium text-white transition-colors hover:bg-blue-500"
+              className="mt-2 inline-flex h-10 items-center justify-center rounded-lg bg-rose px-4 text-sm font-medium text-white transition-colors hover:bg-rose-dark"
             >
               Subscribe
             </a>
