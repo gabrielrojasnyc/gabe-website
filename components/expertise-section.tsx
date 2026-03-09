@@ -40,10 +40,10 @@ export function ExpertiseSection() {
     <section className="bg-neutral-900/50 px-6 py-24 md:px-12 lg:px-24">
       <div className="mx-auto max-w-7xl">
         <div className="mb-16">
-          <span className="mb-4 block font-mono text-xs uppercase tracking-[0.2em] text-blue-400">
+          <span className="mb-4 block font-mono text-xs uppercase tracking-wider text-rose">
             Expertise
           </span>
-          <h2 className="font-heading text-3xl font-bold text-white md:text-4xl">Core Expertise</h2>
+          <h2 className="font-sans text-3xl font-bold text-white md:text-4xl">Core Expertise</h2>
           <p className="mt-4 max-w-xl text-gray-400">
             Where deep technical knowledge meets product intuition.
           </p>
@@ -53,22 +53,22 @@ export function ExpertiseSection() {
           {expertise.map((item, index) => (
             <div
               key={index}
-              className="group relative overflow-hidden rounded-lg border border-white/10 bg-white/[0.03] p-8 transition-all hover:border-blue-500/30 hover:bg-white/[0.06]"
+              className="group relative overflow-hidden rounded-lg border border-white/10 bg-white/[0.03] p-8 transition-all hover:border-rose/30 hover:bg-white/[0.06]"
             >
               {/* Large faded number */}
-              <span className="absolute top-4 right-6 font-heading text-7xl font-bold text-white/[0.03] select-none">
+              <span className="absolute top-4 right-6 font-sans text-7xl font-bold text-white/[0.03] select-none">
                 {String(index + 1).padStart(2, "0")}
               </span>
 
               <div className="relative flex flex-col gap-6 sm:flex-row sm:items-start">
-                <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-lg bg-blue-600/10 text-blue-400 transition-colors group-hover:bg-blue-600/20">
+                <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-lg bg-rose/10 text-rose transition-colors group-hover:bg-rose/20">
                   <item.icon className="h-7 w-7" />
                 </div>
                 <div className="flex-1">
                   <h3 className="mb-2 text-xl font-bold text-white">{item.title}</h3>
                   <p className="text-sm leading-relaxed text-gray-400">{item.description}</p>
                   <div className="mt-4 flex items-baseline gap-2">
-                    <span className="font-heading text-2xl font-bold text-blue-400">{item.stat}</span>
+                    <span className="font-sans text-2xl font-bold text-rose">{item.stat}</span>
                     <span className="text-xs uppercase tracking-wider text-gray-500">{item.statLabel}</span>
                   </div>
                 </div>

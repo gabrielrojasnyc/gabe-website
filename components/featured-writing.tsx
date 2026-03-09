@@ -36,10 +36,10 @@ export function FeaturedWriting() {
       <div className="mx-auto max-w-6xl">
         <div className="mb-16 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
           <div>
-            <span className="mb-4 block font-mono text-xs uppercase tracking-[0.2em] text-blue-400">
+            <span className="mb-4 block font-mono text-xs uppercase tracking-wider text-rose">
               Writing
             </span>
-            <h2 className="mb-4 font-heading text-3xl font-bold text-white md:text-4xl">Featured Writing</h2>
+            <h2 className="mb-4 font-sans text-3xl font-bold text-white md:text-4xl">Featured Writing</h2>
             <p className="text-gray-400 max-w-2xl">
               No fluff, no hype cycles. Just deep technical analysis and forward-thinking product strategy.
             </p>
@@ -59,10 +59,10 @@ export function FeaturedWriting() {
           <Link
             href={lead.link}
             target="_blank"
-            className="group flex flex-col justify-between rounded-lg border border-white/10 bg-white/[0.02] p-8 transition-all hover:border-blue-500/50 hover:bg-white/[0.05] lg:col-span-3"
+            className="group flex flex-col justify-between rounded-lg border border-white/10 bg-white/[0.02] p-8 transition-all hover:border-rose/50 hover:bg-white/[0.05] lg:col-span-3"
           >
             <div>
-              <div className="mb-3 inline-block rounded-md bg-blue-600/10 px-3 py-1 text-xs font-bold uppercase tracking-wider text-blue-400">
+              <div className="mb-3 inline-block rounded-md bg-rose/10 px-3 py-1 text-xs font-bold uppercase tracking-wider text-rose">
                 Latest
               </div>
               <div className="mb-4 flex items-center gap-3 text-sm text-gray-500">
@@ -73,12 +73,12 @@ export function FeaturedWriting() {
                 <span>{"--"}</span>
                 <span>{lead.readTime}</span>
               </div>
-              <h3 className="mb-4 font-heading text-2xl font-bold text-white group-hover:text-blue-400 transition-colors md:text-3xl text-balance">
+              <h3 className="mb-4 font-sans text-2xl font-bold text-white group-hover:text-rose transition-colors md:text-3xl text-balance">
                 {lead.title}
               </h3>
               <p className="text-base leading-relaxed text-gray-400 max-w-xl">{lead.excerpt}</p>
             </div>
-            <div className="mt-8 flex items-center text-sm font-medium text-blue-400 group-hover:text-blue-300">
+            <div className="mt-8 flex items-center text-sm font-medium text-rose group-hover:text-rose/80">
               Read Article
               <ArrowUpRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
             </div>
@@ -91,7 +91,7 @@ export function FeaturedWriting() {
                 key={index}
                 href={article.link}
                 target="_blank"
-                className="group flex flex-1 flex-col justify-between rounded-lg border border-white/10 bg-white/[0.02] p-6 transition-all hover:border-blue-500/50 hover:bg-white/[0.05]"
+                className="group flex flex-1 flex-col justify-between rounded-lg border border-white/10 bg-white/[0.02] p-6 transition-all hover:border-rose/50 hover:bg-white/[0.05]"
               >
                 <div>
                   <div className="mb-3 flex items-center gap-3 text-sm text-gray-500">
@@ -102,12 +102,12 @@ export function FeaturedWriting() {
                     <span>{"--"}</span>
                     <span>{article.readTime}</span>
                   </div>
-                  <h3 className="mb-2 text-lg font-bold text-white group-hover:text-blue-400 transition-colors">
+                  <h3 className="mb-2 text-lg font-bold text-white group-hover:text-rose transition-colors">
                     {article.title}
                   </h3>
                   <p className="text-sm leading-relaxed text-gray-400">{article.excerpt}</p>
                 </div>
-                <div className="mt-4 flex items-center text-sm font-medium text-blue-400 group-hover:text-blue-300">
+                <div className="mt-4 flex items-center text-sm font-medium text-rose group-hover:text-rose/80">
                   Read Article
                   <ArrowUpRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
                 </div>
@@ -120,7 +120,7 @@ export function FeaturedWriting() {
           <Link
             href="https://gabrielrojasai.substack.com"
             target="_blank"
-            className="inline-flex items-center text-blue-400 hover:text-blue-300 transition-colors"
+            className="inline-flex items-center text-rose hover:text-rose/80 transition-colors"
           >
             View All Articles
             <ArrowUpRight className="ml-2 h-5 w-5" />

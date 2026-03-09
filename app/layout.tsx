@@ -4,15 +4,18 @@ import type { Metadata } from "next"
 import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
 
-import { Space_Grotesk, Inter } from "next/font/google"
+import { Geist, Geist_Mono } from "next/font/google"
 
-const spaceGrotesk = Space_Grotesk({
-  subsets: ["latin"],
-  variable: "--font-heading",
-})
-const inter = Inter({
+const geist = Geist({
   subsets: ["latin"],
   variable: "--font-sans",
+  weight: ["400", "500", "600", "700"],
+})
+
+const geistMono = Geist_Mono({
+  subsets: ["latin"],
+  variable: "--font-mono",
+  weight: ["400", "500", "600", "700"],
 })
 
 export const metadata: Metadata = {
@@ -29,7 +32,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body
-        className={`${inter.variable} ${spaceGrotesk.variable} font-sans antialiased bg-black text-white min-h-screen selection:bg-blue-500 selection:text-white`}
+        className={`${geist.variable} ${geistMono.variable} font-sans antialiased bg-black text-white min-h-screen selection:bg-rose-500 selection:text-white`}
       >
         {children}
         <Analytics />
