@@ -21,6 +21,11 @@ export function HeroSection() {
       </div>
 
       <div className="relative z-10 mx-auto w-full max-w-7xl">
+        {/* Pixel marker - decorative section identifier per typography system */}
+        <div className="mb-6 animate-fade-in-up">
+          <span className="pixel-marker">01 / Home</span>
+        </div>
+
         {/* Micro-label */}
         <div className="mb-12 animate-fade-in-up">
           <span className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-rose">

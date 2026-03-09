@@ -1,6 +1,14 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+/* Geist Pixel Square - loaded via CDN (not available on Google Fonts) */
+@font-face {
+  font-family: 'Geist Pixel Square';
+  src: url('https://cdn.jsdelivr.net/npm/geist@1.7.0/dist/fonts/geist-pixel/GeistPixel-Square.woff2') format('woff2');
+  font-weight: 400;
+  font-display: swap;
+}
+
 @custom-variant dark (&:is(.dark *));
 
 :root {
@@ -116,6 +124,7 @@
 @theme inline {
   --font-sans: var(--font-sans);
   --font-mono: var(--font-mono);
+  --font-pixel: 'Geist Pixel Square', 'Geist Mono', ui-monospace, monospace;
   
   /* Extend colors for Tailwind */
   --color-rose: var(--rose);
@@ -188,9 +197,27 @@
   @apply text-sm font-mono;
 }
 
-/* Micro-label pattern from typography system */
+/* Micro-label pattern - Geist Mono for section labels */
 .micro-label {
   @apply block text-xs font-mono font-semibold uppercase tracking-wider text-rose;
+}
+
+/* Pixel marker pattern - Geist Pixel Square for decorative accents only */
+/* Rules: 9-12px, ALL CAPS, wide tracking, fg4 or rose color, max 2 per layout */
+.pixel-marker {
+  font-family: 'Geist Pixel Square', 'Geist Mono', ui-monospace, monospace;
+  font-size: 0.625rem; /* 10px */
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--foreground-tertiary); /* fg4 */
+}
+
+.pixel-marker-accent {
+  font-family: 'Geist Pixel Square', 'Geist Mono', ui-monospace, monospace;
+  font-size: 0.625rem; /* 10px */
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--rose);
 }
 
 /* Adding mosaic and noise utilities for the Gaudí texture */
