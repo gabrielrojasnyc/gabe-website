@@ -116,16 +116,19 @@ export function Footer() {
         {/* Divider */}
         <div className="border-t border-white/5" />
 
-        {/* Bottom statement */}
-        <div className="mt-12 flex flex-col items-start justify-between gap-6 md:flex-row md:items-center">
+        {/* Bottom statement with pixel marker watermark */}
+        <div className="mt-12 flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
           <div>
             <p className="text-xs font-mono uppercase tracking-wider text-gray-600">
               &copy; {new Date().getFullYear()} Gabriel Rojas. All rights reserved.
             </p>
           </div>
-          <p className="text-sm leading-relaxed text-gray-500 max-w-md">
-            <span className="font-semibold text-white">Built with conviction.</span> Using Geist typography, engineered for precision and clarity.
-          </p>
+          <div className="flex flex-col items-end gap-4">
+            <span className="pixel-marker-accent">BUILT BY HAND</span>
+            <p className="text-sm leading-relaxed text-gray-500 max-w-md text-right">
+              <span className="font-semibold text-white">Built with conviction.</span> Using Geist typography, engineered for precision and clarity.
+            </p>
+          </div>
         </div>
       </div>
     </footer>

@@ -34,6 +34,7 @@ export function CareerTimeline() {
   return (
     <section className="border-y border-white/5 bg-neutral-900/30 px-6 py-24 md:px-12 lg:px-24">
       <div className="mx-auto max-w-4xl">
+        <span className="pixel-marker mb-6">02 / JOURNEY</span>
         <span className="mb-4 block font-mono text-xs uppercase tracking-wider text-rose">
           Career
         </span>

@@ -23,6 +23,7 @@ export function AboutSection() {
         </div>
 
         <div className="order-1 lg:order-2">
+          <span className="pixel-marker mb-6">/ ABOUT</span>
           <span className="mb-4 block font-mono text-xs uppercase tracking-wider text-rose">
             About
           </span>

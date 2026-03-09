@@ -36,6 +36,7 @@ export function FeaturedWriting() {
       <div className="mx-auto max-w-6xl">
         <div className="mb-16 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
           <div>
+            <span className="pixel-marker mb-6">03 / INSIGHTS</span>
             <span className="mb-4 block font-mono text-xs uppercase tracking-wider text-rose">
               Writing
             </span>

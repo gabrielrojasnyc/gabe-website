@@ -35,6 +35,7 @@ export function GithubProjectsSection() {
     <section id="open-source" className="scroll-mt-20 border-t border-white/5 bg-gradient-to-b from-black to-neutral-950 px-6 py-24 md:px-12 lg:px-24">
       <div className="mx-auto max-w-7xl">
       <div className="mb-16">
+        <span className="pixel-marker mb-6">06 / CODE</span>
         <span className="mb-4 block font-mono text-xs uppercase tracking-wider text-rose">
           Open Source
         </span>

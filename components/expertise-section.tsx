@@ -40,6 +40,7 @@ export function ExpertiseSection() {
     <section className="bg-neutral-900/50 px-6 py-24 md:px-12 lg:px-24">
       <div className="mx-auto max-w-7xl">
         <div className="mb-16">
+          <span className="pixel-marker mb-6">05 / SKILLS</span>
           <span className="mb-4 block font-mono text-xs uppercase tracking-wider text-rose">
             Expertise
           </span>

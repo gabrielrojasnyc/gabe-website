@@ -21,9 +21,9 @@ export function HeroSection() {
       </div>
 
       <div className="relative z-10 mx-auto w-full max-w-7xl">
-        {/* Pixel marker - decorative section identifier per typography system */}
-        <div className="mb-6 animate-fade-in-up">
-          <span className="pixel-marker">01 / Home</span>
+        {/* Pixel marker - slide number per typography system: 9-12px, ALL CAPS, fg4 color */}
+        <div className="mb-8 animate-fade-in-up">
+          <span className="pixel-marker">01 / 06</span>
         </div>
 
         {/* Micro-label */}

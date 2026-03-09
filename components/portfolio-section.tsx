@@ -32,6 +32,7 @@ export function PortfolioSection() {
     <section id="work" className="scroll-mt-20 px-6 py-24 md:px-12 lg:px-24">
       <div className="mx-auto max-w-7xl">
       <div className="mb-16">
+        <span className="pixel-marker mb-6">04 / WORK</span>
         <span className="mb-4 block font-mono text-xs uppercase tracking-wider text-rose">
           Portfolio
         </span>
