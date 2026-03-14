@@ -294,3 +294,211 @@
 .animate-float-slow-reverse {
   animation: float-slow-reverse 10s ease-in-out 1s infinite;
 }
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Card hover lift effect */
+.card-hover-lift {
+  transition: transform 0.3s cubic-bezier(0.25, 0.4, 0.25, 1), 
+              box-shadow 0.3s cubic-bezier(0.25, 0.4, 0.25, 1),
+              border-color 0.3s ease;
+}
+
+.card-hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Accent line draw animation for cards */
+@keyframes draw-line {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.accent-line-draw {
+  position: relative;
+}
+
+.accent-line-draw::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 2px;
+  width: 0;
+  background: var(--rose);
+  transition: width 0.5s cubic-bezier(0.25, 0.4, 0.25, 1);
+}
+
+.accent-line-draw:hover::before {
+  width: 100%;
+}
+
+/* Button press effect */
+.btn-press:active {
+  transform: scale(0.98);
+}
+
+/* Icon slide animation */
+.icon-slide-right {
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.group:hover .icon-slide-right {
+  transform: translateX(4px);
+}
+
+/* Blur reveal animation */
+@keyframes blur-reveal {
+  from {
+    opacity: 0;
+    filter: blur(10px);
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+  }
+}
+
+.animate-blur-reveal {
+  animation: blur-reveal 0.8s cubic-bezier(0.25, 0.4, 0.25, 1) both;
+}
+
+/* Stagger delay utilities for blur reveal */
+.blur-delay-100 {
+  animation-delay: 0.1s;
+}
+
+.blur-delay-200 {
+  animation-delay: 0.2s;
+}
+
+.blur-delay-300 {
+  animation-delay: 0.3s;
+}
+
+.blur-delay-400 {
+  animation-delay: 0.4s;
+}
+
+.blur-delay-500 {
+  animation-delay: 0.5s;
+}
+
+/* Timeline line draw animation */
+@keyframes timeline-draw {
+  from {
+    height: 0;
+  }
+  to {
+    height: 100%;
+  }
+}
+
+.timeline-line-animated {
+  animation: timeline-draw 1.5s cubic-bezier(0.25, 0.4, 0.25, 1) forwards;
+}
+
+/* Animated gradient background */
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animated-gradient {
+  background: linear-gradient(
+    -45deg,
+    var(--background) 0%,
+    #1a0a0e 25%,
+    var(--background) 50%,
+    #0e0a1a 75%,
+    var(--background) 100%
+  );
+  background-size: 400% 400%;
+  animation: gradient-shift 15s ease infinite;
+}
+
+/* Shimmer effect for loading states */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.shimmer {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.05) 50%,
+    transparent 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+/* Glow pulse effect */
+@keyframes glow-pulse {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(201, 65, 84, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(201, 65, 84, 0.4);
+  }
+}
+
+.glow-pulse {
+  animation: glow-pulse 3s ease-in-out infinite;
+}
+
+/* Subtle text gradient animation */
+@keyframes text-gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.text-gradient-animated {
+  background: linear-gradient(
+    90deg,
+    var(--rose) 0%,
+    #e86b7b 50%,
+    var(--rose) 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: text-gradient-shift 4s ease infinite;
+}
