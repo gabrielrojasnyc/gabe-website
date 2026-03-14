@@ -1,8 +1,9 @@
 "use client"
 
 import { Brain, Search, Code, BarChart } from "lucide-react"
-import { motion, useInView, useReducedMotion } from "framer-motion"
-import { useRef } from "react"
+import { motion, useInView, useReducedMotion, useMotionValue, animate } from "framer-motion"
+import { useRef, useEffect } from "react"
+import { TiltCard } from "@/components/ui/tilt-card"
 
 const expertise = [
   {
@@ -10,34 +11,80 @@ const expertise = [
     description:
       "Defining the 'Why' and 'How' of AI adoption. Transforming abstract capabilities into concrete roadmaps that drive revenue and user value.",
     icon: Brain,
-    stat: "5+",
+    stat: 5,
     statLabel: "Products shipped",
+    statSuffix: "+",
   },
   {
     title: "Technical Leadership",
     description:
       "Bridging the gap between engineering and business. Fluent in the language of Transformers, RAG pipelines, and cloud infrastructure.",
     icon: Code,
-    stat: "10+",
+    stat: 10,
     statLabel: "Years experience",
+    statSuffix: "+",
   },
   {
     title: "LLM Evaluations & Ops",
     description:
       "Moving beyond 'vibes-based' development. Establishing rigorous evaluation frameworks to measure model performance, bias, and accuracy.",
     icon: BarChart,
-    stat: "40%",
+    stat: 40,
     statLabel: "Relevance gains",
+    statSuffix: "%",
   },
   {
     title: "Large Scale Search",
     description:
       "Deep expertise in semantic retrieval and recommendation systems, including the deployment of Two-Tower architectures for enterprise data.",
     icon: Search,
-    stat: "M+",
+    stat: 1,
     statLabel: "Queries per day",
+    statSuffix: "M+",
   },
 ]
+
+// Animated counter component
+function AnimatedCounter({ 
+  value, 
+  suffix,
+  isInView,
+  delay = 0 
+}: { 
+  value: number
+  suffix: string
+  isInView: boolean
+  delay?: number 
+}) {
+  const count = useMotionValue(0)
+  const prefersReducedMotion = useReducedMotion()
+  const displayRef = useRef<HTMLSpanElement>(null)
+
+  useEffect(() => {
+    if (!isInView || prefersReducedMotion) return
+
+    const timeout = setTimeout(() => {
+      const controls = animate(count, value, {
+        duration: 2,
+        ease: "easeOut",
+        onUpdate: (latest) => {
+          if (displayRef.current) {
+            displayRef.current.textContent = Math.round(latest) + suffix
+          }
+        },
+      })
+      return () => controls.stop()
+    }, delay)
+
+    return () => clearTimeout(timeout)
+  }, [isInView, value, suffix, delay, count, prefersReducedMotion])
+
+  if (prefersReducedMotion) {
+    return <span>{value}{suffix}</span>
+  }
+
+  return <span ref={displayRef}>0{suffix}</span>
+}
 
 export function ExpertiseSection() {
   const sectionRef = useRef<HTMLElement>(null)
@@ -113,35 +160,48 @@ export function ExpertiseSection() {
           {expertise.map((item, index) => (
             <motion.div
               key={index}
-              className="group relative overflow-hidden rounded-lg border border-white/10 bg-white/[0.03] p-8 transition-all hover:border-rose/30 hover:bg-white/[0.06] card-hover-lift"
               initial="hidden"
               animate={isInView ? "visible" : "hidden"}
               variants={prefersReducedMotion ? {} : cardVariants}
               custom={index}
-              whileHover={prefersReducedMotion ? {} : { y: -4, transition: { duration: 0.2 } }}
             >
-              {/* Large faded number */}
-              <span className="absolute top-4 right-6 font-sans text-7xl font-bold text-white/[0.03] select-none">
-                {String(index + 1).padStart(2, "0")}
-              </span>
+              <TiltCard
+                className="h-full"
+                tiltStrength={6}
+                glareOpacity={0.08}
+              >
+                <div className="group relative h-full overflow-hidden rounded-lg border border-white/10 bg-white/[0.03] p-8 transition-all hover:border-rose/30 hover:bg-white/[0.06]">
+                  {/* Large faded number */}
+                  <span className="absolute top-4 right-6 font-sans text-7xl font-bold text-white/[0.03] select-none">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
 
-              <div className="relative flex flex-col gap-6 sm:flex-row sm:items-start">
-                <motion.div 
-                  className="flex h-14 w-14 shrink-0 items-center justify-center rounded-lg bg-rose/10 text-rose transition-colors group-hover:bg-rose/20"
-                  whileHover={prefersReducedMotion ? {} : { scale: 1.1, rotate: 5 }}
-                  transition={{ type: "spring", stiffness: 300 }}
-                >
-                  <item.icon className="h-7 w-7" />
-                </motion.div>
-                <div className="flex-1">
-                  <h3 className="mb-2 text-xl font-bold text-white">{item.title}</h3>
-                  <p className="text-sm leading-relaxed text-gray-400">{item.description}</p>
-                  <div className="mt-4 flex items-baseline gap-2">
-                    <span className="font-sans text-2xl font-bold text-rose">{item.stat}</span>
-                    <span className="text-xs uppercase tracking-wider text-gray-500">{item.statLabel}</span>
+                  <div className="relative flex flex-col gap-6 sm:flex-row sm:items-start">
+                    <motion.div 
+                      className="flex h-14 w-14 shrink-0 items-center justify-center rounded-lg bg-rose/10 text-rose transition-colors group-hover:bg-rose/20"
+                      whileHover={prefersReducedMotion ? {} : { scale: 1.1, rotate: 5 }}
+                      transition={{ type: "spring", stiffness: 300 }}
+                    >
+                      <item.icon className="h-7 w-7" />
+                    </motion.div>
+                    <div className="flex-1">
+                      <h3 className="mb-2 text-xl font-bold text-white">{item.title}</h3>
+                      <p className="text-sm leading-relaxed text-gray-400">{item.description}</p>
+                      <div className="mt-4 flex items-baseline gap-2">
+                        <span className="font-sans text-2xl font-bold text-rose">
+                          <AnimatedCounter 
+                            value={item.stat} 
+                            suffix={item.statSuffix}
+                            isInView={isInView}
+                            delay={500 + index * 200}
+                          />
+                        </span>
+                        <span className="text-xs uppercase tracking-wider text-gray-500">{item.statLabel}</span>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
+              </TiltCard>
             </motion.div>
           ))}
         </div>

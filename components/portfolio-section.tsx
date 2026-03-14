@@ -3,6 +3,7 @@
 import Image from "next/image"
 import { motion, useInView, useReducedMotion } from "framer-motion"
 import { useRef } from "react"
+import { TiltCard } from "@/components/ui/tilt-card"
 
 const projects = [
   {
@@ -105,47 +106,54 @@ export function PortfolioSection() {
           {projects.map((project, index) => (
             <motion.div
               key={index}
-              className="group flex flex-col justify-between overflow-hidden rounded-lg border border-white/10 bg-white/[0.02] transition-all hover:border-white/20 hover:bg-white/[0.05] card-hover-lift"
               initial="hidden"
               animate={isInView ? "visible" : "hidden"}
               variants={prefersReducedMotion ? {} : cardVariants}
               custom={index}
             >
-              {/* Project thumbnail */}
-              <div className="relative h-48 w-full overflow-hidden border-b border-white/5">
-                <Image
-                  src={project.image || "/placeholder.svg"}
-                  alt={project.title}
-                  fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors" />
-              </div>
+              <TiltCard
+                className="h-full"
+                tiltStrength={8}
+                glareOpacity={0.1}
+              >
+                <div className="group flex h-full flex-col justify-between overflow-hidden rounded-lg border border-white/10 bg-white/[0.02] transition-all hover:border-white/20 hover:bg-white/[0.05]">
+                  {/* Project thumbnail */}
+                  <div className="relative h-48 w-full overflow-hidden border-b border-white/5">
+                    <Image
+                      src={project.image || "/placeholder.svg"}
+                      alt={project.title}
+                      fill
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors" />
+                  </div>
 
-              <div className="p-8">
-                <motion.div 
-                  className="mb-6 text-xs font-bold uppercase tracking-wider text-rose"
-                  initial={{ opacity: 0, x: -10 }}
-                  animate={isInView ? { opacity: 1, x: 0 } : {}}
-                  transition={{ delay: 0.3 + index * 0.1, duration: 0.4 }}
-                >
-                  {project.category}
-                </motion.div>
-                <h3 className="mb-4 font-sans text-2xl font-bold text-white">{project.title}</h3>
-                <p className="mb-8 text-sm leading-relaxed text-gray-400">{project.description}</p>
-
-                <div className="flex flex-wrap gap-2 mt-auto">
-                  {project.tags.map((tag) => (
-                    <motion.span
-                      key={tag}
-                      className="inline-block rounded-full border border-white/10 bg-black/50 px-3 py-1 text-xs text-gray-300 transition-colors hover:border-rose/30 hover:bg-rose/5"
-                      whileHover={prefersReducedMotion ? {} : { scale: 1.05 }}
+                  <div className="p-8">
+                    <motion.div 
+                      className="mb-6 text-xs font-bold uppercase tracking-wider text-rose"
+                      initial={{ opacity: 0, x: -10 }}
+                      animate={isInView ? { opacity: 1, x: 0 } : {}}
+                      transition={{ delay: 0.3 + index * 0.1, duration: 0.4 }}
                     >
-                      {tag}
-                    </motion.span>
-                  ))}
+                      {project.category}
+                    </motion.div>
+                    <h3 className="mb-4 font-sans text-2xl font-bold text-white">{project.title}</h3>
+                    <p className="mb-8 text-sm leading-relaxed text-gray-400">{project.description}</p>
+
+                    <div className="flex flex-wrap gap-2 mt-auto">
+                      {project.tags.map((tag) => (
+                        <motion.span
+                          key={tag}
+                          className="inline-block rounded-full border border-white/10 bg-black/50 px-3 py-1 text-xs text-gray-300 transition-colors hover:border-rose/30 hover:bg-rose/5"
+                          whileHover={prefersReducedMotion ? {} : { scale: 1.05 }}
+                        >
+                          {tag}
+                        </motion.span>
+                      ))}
+                    </div>
+                  </div>
                 </div>
-              </div>
+              </TiltCard>
             </motion.div>
           ))}
         </div>

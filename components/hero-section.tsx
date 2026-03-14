@@ -5,6 +5,9 @@ import Link from "next/link"
 import Image from "next/image"
 import { motion, useReducedMotion } from "framer-motion"
 import { OrganicCurve, MosaicBackground } from "@/components/ui/gaudi-visuals"
+import { MagneticButton } from "@/components/ui/magnetic-button"
+import { TextScramble } from "@/components/ui/text-scramble"
+import { Parallax } from "@/components/ui/parallax"
 
 export function HeroSection() {
   const prefersReducedMotion = useReducedMotion()
@@ -60,17 +63,19 @@ export function HeroSection() {
     <section className="relative flex min-h-screen flex-col justify-center overflow-hidden px-6 md:px-12 lg:px-24">
       <MosaicBackground />
 
-      {/* Background image */}
-      <div className="absolute inset-0 z-0">
-        <Image
-          src="/hero-neural-symphony.jpg"
-          alt=""
-          fill
-          className="object-cover opacity-20 mix-blend-luminosity"
-          priority
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black" />
-      </div>
+      {/* Background image with parallax */}
+      <Parallax speed={-0.2} className="absolute inset-0 z-0">
+        <div className="absolute inset-0 scale-110">
+          <Image
+            src="/hero-neural-symphony.jpg"
+            alt=""
+            fill
+            className="object-cover opacity-20 mix-blend-luminosity"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black" />
+        </div>
+      </Parallax>
 
       <motion.div
         className="relative z-10 mx-auto w-full max-w-7xl"
@@ -90,19 +95,21 @@ export function HeroSection() {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-rose opacity-75"></span>
               <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-rose"></span>
             </span>
-            Architecting Intelligence
+            <TextScramble text="Architecting Intelligence" scrambleSpeed={25} revealDelay={300} />
           </span>
         </motion.div>
 
-        {/* Headline */}
+        {/* Headline with text scramble */}
         <motion.h1
           className="font-pixel text-5xl font-bold tracking-wide text-white md:text-7xl lg:text-8xl leading-[1.1] uppercase"
           variants={variants.headline}
         >
-          Structure
+          <TextScramble text="Structure" scrambleSpeed={35} revealDelay={500} />
           <br />
-          from{" "}
-          <span className="text-rose">Chaos.</span>
+          <span className="text-white">from </span>
+          <span className="text-rose">
+            <TextScramble text="Chaos." scrambleSpeed={35} revealDelay={800} />
+          </span>
         </motion.h1>
 
         {/* Subtext */}
@@ -116,26 +123,30 @@ export function HeroSection() {
           <span className="text-white font-medium">endure</span>.
         </motion.p>
 
-        {/* CTAs */}
+        {/* CTAs with magnetic effect */}
         <motion.div
           className="mt-14 flex flex-col gap-4 sm:flex-row sm:items-center"
           variants={variants.item}
         >
-          <Link
+          <MagneticButton
+            as="a"
             href="https://gabrielrojasai.substack.com"
             target="_blank"
-            className="group inline-flex h-12 items-center justify-center rounded-lg bg-rose px-8 text-sm font-semibold text-white transition-all hover:bg-rose-dark btn-press"
+            className="group inline-flex h-12 items-center justify-center rounded-lg bg-rose px-8 text-sm font-semibold text-white transition-colors hover:bg-rose-dark"
+            strength={0.4}
           >
             Read My Mind
             <ArrowRight className="ml-2 h-4 w-4 icon-slide-right" />
-          </Link>
-          <Link
+          </MagneticButton>
+          <MagneticButton
+            as="a"
             href="#work"
             className="group inline-flex h-12 items-center justify-center text-sm font-medium text-gray-400 transition-colors hover:text-white"
+            strength={0.3}
           >
             See The Evidence
             <ArrowRight className="ml-2 h-4 w-4 icon-slide-right" />
-          </Link>
+          </MagneticButton>
         </motion.div>
       </motion.div>
 

@@ -4,6 +4,7 @@ import Image from "next/image"
 import { motion, useInView, useReducedMotion } from "framer-motion"
 import { useRef } from "react"
 import { OrganicBlob } from "@/components/ui/gaudi-visuals"
+import { Parallax } from "@/components/ui/parallax"
 
 export function AboutSection() {
   const sectionRef = useRef<HTMLElement>(null)
@@ -47,10 +48,11 @@ export function AboutSection() {
   }
 
   const quoteVariants = {
-    hidden: { opacity: 0, x: 30 },
+    hidden: { opacity: 0, x: 30, rotateY: -10 },
     visible: {
       opacity: 1,
       x: 0,
+      rotateY: 0,
       transition: {
         duration: 0.6,
         delay: 0.4,
@@ -72,9 +74,10 @@ export function AboutSection() {
         variants={prefersReducedMotion ? {} : containerVariants}
       >
         <div className="relative order-2 lg:order-1">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[140%] h-[140%]">
+          {/* Parallax organic blob background */}
+          <Parallax speed={0.3} className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[140%] h-[140%]">
             <OrganicBlob />
-          </div>
+          </Parallax>
 
           <motion.div 
             className="relative aspect-[4/5] w-full max-w-md mx-auto overflow-hidden rounded-lg border border-white/10 bg-neutral-900 transition-all duration-700 hover:grayscale-0 hover:scale-[1.02]"
@@ -88,6 +91,10 @@ export function AboutSection() {
           <motion.div 
             className="mt-6 p-6 max-w-xs mx-auto bg-neutral-900/90 backdrop-blur-xl border border-white/10 rounded-lg shadow-2xl lg:absolute lg:mt-0 lg:-bottom-6 lg:-right-6 lg:mx-0"
             variants={prefersReducedMotion ? {} : quoteVariants}
+            whileHover={prefersReducedMotion ? {} : { 
+              scale: 1.02,
+              boxShadow: "0 25px 50px -12px rgba(201, 65, 84, 0.15)"
+            }}
           >
             <p className="text-sm text-gray-300 italic leading-relaxed">
               {"\"Most 'AI strategies' are just expensive theater. I'm here to build the stage, not just perform on it.\""}
@@ -114,6 +121,9 @@ export function AboutSection() {
           <motion.div 
             className="h-px w-16 bg-rose mb-10"
             variants={prefersReducedMotion ? {} : itemVariants}
+            initial={{ width: 0 }}
+            animate={isInView ? { width: 64 } : {}}
+            transition={{ duration: 0.8, delay: 0.3, ease: [0.25, 0.4, 0.25, 1] }}
           />
 
           <motion.div 
@@ -134,18 +144,21 @@ export function AboutSection() {
               className="pl-6 border-l border-white/10 space-y-4"
               variants={prefersReducedMotion ? {} : itemVariants}
             >
-              <p>
-                <strong className="text-white block mb-0.5 text-sm">Texas Roots.</strong>
-                <span className="text-sm">Built on pragmatism and straight talk.</span>
-              </p>
-              <p>
-                <strong className="text-white block mb-0.5 text-sm">NYC Hustle.</strong>
-                <span className="text-sm">Forged in the fires of speed and scale.</span>
-              </p>
-              <p>
-                <strong className="text-white block mb-0.5 text-sm">Global Ambition.</strong>
-                <span className="text-sm">{"Because this technology doesn't respect borders."}</span>
-              </p>
+              {[
+                { title: "Texas Roots.", desc: "Built on pragmatism and straight talk." },
+                { title: "NYC Hustle.", desc: "Forged in the fires of speed and scale." },
+                { title: "Global Ambition.", desc: "Because this technology doesn't respect borders." },
+              ].map((item, index) => (
+                <motion.p 
+                  key={item.title}
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={isInView ? { opacity: 1, x: 0 } : {}}
+                  transition={{ delay: 0.6 + index * 0.15, duration: 0.4 }}
+                >
+                  <strong className="text-white block mb-0.5 text-sm">{item.title}</strong>
+                  <span className="text-sm">{item.desc}</span>
+                </motion.p>
+              ))}
             </motion.div>
           </motion.div>
         </motion.div>
