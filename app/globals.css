@@ -294,3 +294,123 @@
 .animate-float-slow-reverse {
   animation: float-slow-reverse 10s ease-in-out 1s infinite;
 }
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Card hover lift effect */
+.card-hover-lift {
+  transition: transform 0.3s cubic-bezier(0.25, 0.4, 0.25, 1), 
+              box-shadow 0.3s cubic-bezier(0.25, 0.4, 0.25, 1),
+              border-color 0.3s ease;
+}
+
+.card-hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Accent line draw animation for cards */
+@keyframes draw-line {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.accent-line-draw {
+  position: relative;
+}
+
+.accent-line-draw::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 2px;
+  width: 0;
+  background: var(--rose);
+  transition: width 0.5s cubic-bezier(0.25, 0.4, 0.25, 1);
+}
+
+.accent-line-draw:hover::before {
+  width: 100%;
+}
+
+/* Button press effect */
+.btn-press:active {
+  transform: scale(0.98);
+}
+
+/* Icon slide animation */
+.icon-slide-right {
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.group:hover .icon-slide-right {
+  transform: translateX(4px);
+}
+
+/* Blur reveal animation */
+@keyframes blur-reveal {
+  from {
+    opacity: 0;
+    filter: blur(10px);
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+  }
+}
+
+.animate-blur-reveal {
+  animation: blur-reveal 0.8s cubic-bezier(0.25, 0.4, 0.25, 1) both;
+}
+
+/* Stagger delay utilities for blur reveal */
+.blur-delay-100 {
+  animation-delay: 0.1s;
+}
+
+.blur-delay-200 {
+  animation-delay: 0.2s;
+}
+
+.blur-delay-300 {
+  animation-delay: 0.3s;
+}
+
+.blur-delay-400 {
+  animation-delay: 0.4s;
+}
+
+.blur-delay-500 {
+  animation-delay: 0.5s;
+}
+
+/* Timeline line draw animation */
+@keyframes timeline-draw {
+  from {
+    height: 0;
+  }
+  to {
+    height: 100%;
+  }
+}
+
+.timeline-line-animated {
+  animation: timeline-draw 1.5s cubic-bezier(0.25, 0.4, 0.25, 1) forwards;
+}
